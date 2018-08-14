@@ -1,0 +1,34 @@
+{
+  "name": "TTP to PDF",
+  "description": "Extract thetrainingplan.com content as PDF page",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": ["storage", "declarativeContent"],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "ttp2pdf.png"
+  },
+  "page_action": {
+    "default_popup": "index.html",
+    "default_icon": "ttp2pdf.png"
+  },
+  "icons": {
+    "16": "ttp2pdf.png",
+    "32": "ttp2pdf.png",
+    "48": "ttp2pdf.png",
+    "128": "ttp2pdf.png"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens index.html"
+    }
+  }
+}
