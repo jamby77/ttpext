@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
   const article = document.querySelector("article.post");
   const title = article.querySelector("h2");
   const tabsTitles = article.querySelectorAll("ul.et_pb_tabs_controls li");
@@ -19,4 +19,4 @@ window.onload = function() {
   });
 
   document.body = newDoc;
-};
+});
