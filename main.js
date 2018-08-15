@@ -1,15 +1,16 @@
-let changeColor = document.getElementById("changeColor");
+let changeColor = document.getElementById("flattern");
+let restore = document.getElementById("restore");
 
-chrome.storage.sync.get("color", data => {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute("value", data.color);
-});
-
-changeColor.onclick = function(element) {
-  let color = element.target.value;
+changeColor.onclick = function() {
   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
     chrome.tabs.executeScript(tabs[0].id, {
-      code: `document.body.style.backgroundColor = "${color}";`
+      file: "content.js"
     });
+  });
+};
+
+restore.onclick = () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    chrome.tabs.reload(tabs[0].id);
   });
 };

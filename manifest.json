@@ -11,6 +11,7 @@
     "storage",
     "declarativeContent",
     "activeTab",
+    "tabs",
     "https://thetrainingplan.co/"
   ],
   "page_action": {

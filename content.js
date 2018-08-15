@@ -1,6 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+// TODO - scrape ALL training articles, add a menu at the top, which ones to show by track and date
+function flattern() {
+  const currentContent = document.body.innerHTML;
+
   const article = document.querySelector("article.post");
-  const title = article.querySelector("h2");
+  const title = article.querySelector(".entry-title");
   const tabsTitles = article.querySelectorAll("ul.et_pb_tabs_controls li");
   const content = article.querySelectorAll(
     "div.et_pb_all_tabs div.et_pb_tab_content"
@@ -18,5 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
     newDoc.appendChild(content[idx]);
   });
 
-  document.body = newDoc;
-});
+  document.body.innerHTML = newDoc.innerHTML;
+
+  // window.print();
+}
+
+flattern();

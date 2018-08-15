@@ -1,8 +1,4 @@
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color: "#3aa757" }, () => {
-    console.log("the color is green");
-  });
-
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
     chrome.declarativeContent.onPageChanged.addRules([
       {
@@ -10,16 +6,11 @@ chrome.runtime.onInstalled.addListener(() => {
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
               hostContains: "thetrainingplan",
-              pathContains: "category"
+              urlMatches: "category|members|engine|spp|strength"
             }
           })
         ],
-        actions: [
-          new chrome.declarativeContent.ShowPageAction(),
-          new chrome.declarativeContent.RequestContentScript({
-            js: ["content.js"]
-          })
-        ]
+        actions: [new chrome.declarativeContent.ShowPageAction()]
       }
     ]);
   });
