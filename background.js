@@ -3,15 +3,23 @@ chrome.runtime.onInstalled.addListener(() => {
     console.log("the color is green");
   });
 
-  chrome.declarativeContent.onPageCached.removeRules(undefined, () => {
-    chrome.declarativeContent.onPageCached.addRules([
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
+    chrome.declarativeContent.onPageChanged.addRules([
       {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: { hostEquals: "thetrainingplan.com" }
+            pageUrl: {
+              hostContains: "thetrainingplan",
+              pathContains: "category"
+            }
           })
         ],
-        actions: [new chrome.declarativeContent.ShowPageAction()]
+        actions: [
+          new chrome.declarativeContent.ShowPageAction(),
+          new chrome.declarativeContent.RequestContentScript({
+            js: ["content.js"]
+          })
+        ]
       }
     ]);
   });

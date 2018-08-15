@@ -7,14 +7,15 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-  "permissions": ["storage", "declarativeContent"],
-  "browser_action": {
-    "default_popup": "index.html",
-    "default_icon": "ttp2pdf.png"
-  },
+  "permissions": [
+    "storage",
+    "declarativeContent",
+    "activeTab",
+    "https://thetrainingplan.co/"
+  ],
   "page_action": {
     "default_popup": "index.html",
-    "default_icon": "ttp2pdf.png"
+    "default_icon": { "32": "ttp2pdf.png" }
   },
   "icons": {
     "16": "ttp2pdf.png",
