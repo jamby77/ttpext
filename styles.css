@@ -1,0 +1,76 @@
+body {
+  padding: 0.5 2rem;
+  margin: 0 2rem;
+}
+
+h2 {
+  margin-top: 5rem;
+}
+
+h2.entry-title {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gotop {
+  color: #ff441399;
+  font-size: 26px;
+  text-align: center;
+  height: 38px;
+  width: 40px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #00000017 100%);
+  padding: 5px;
+  box-shadow: 4px 1px 4px -1px #0000003d;
+  vertical-align: baseline;
+  margin-left: 2rem;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  width: 60%;
+  height: 50px;
+  background: linear-gradient(
+    to right,
+    #00000017 0%,
+    #00000005 5%,
+    #00000005 95%,
+    #00000017 100%
+  );
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 4px 1px 4px -1px #0000003d;
+}
+
+nav ul li {
+  flex-grow: 1;
+  border-left: 2px groove #fff;
+}
+
+nav > ul > li:first-child {
+  border-left: 0 none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+@media print {
+  nav ul {
+    background: transparent none;
+    border: 0 none;
+    box-shadow: none;
+  }
+  nav ul li {
+    margin: auto 10px;
+    border: 0 none;
+  }
+}

@@ -6,6 +6,14 @@ changeColor.onclick = function() {
     chrome.tabs.executeScript(tabs[0].id, {
       file: "content.js"
     });
+    var path = chrome.extension.getURL("styles.css");
+    chrome.tabs.executeScript(tabs[0].id, {
+      code: `var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+    link.setAttribute("type", "text/css");
+    link.setAttribute("href", "${path}");
+  document.head.appendChild(link);`
+    });
   });
 };
 
