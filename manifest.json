@@ -1,7 +1,8 @@
 {
-  "name": "TTP to PDF",
-  "description": "Extract thetrainingplan.com content as PDF page",
-  "version": "1.0",
+  "name": "Readable thetrainingplan.co member pages",
+  "short_name": "TTP to print",
+  "description": "Make thetrainingplan.co content flat, suitable for printing (to PDF)",
+  "version": "0.0.1",
   "manifest_version": 2,
   "background": {
     "scripts": ["background.js"],
@@ -17,14 +18,11 @@
   "web_accessible_resources": ["styles.css"],
   "page_action": {
     "default_popup": "index.html",
-    "default_icon": { "32": "ttp2pdf.png" },
+    "default_icon": { "32": "ttp2pdf-128.png" },
     "default_title": "Transofrm TTP default page into easy to print to PDF version"
   },
   "icons": {
-    "16": "ttp2pdf.png",
-    "32": "ttp2pdf.png",
-    "48": "ttp2pdf.png",
-    "128": "ttp2pdf.png"
+    "128": "ttp2pdf-128.png"
   },
   "commands": {
     "_execute_browser_action": {
